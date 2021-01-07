@@ -44,6 +44,7 @@ socket.on('message', msg=>{
 // When a user submit a message in chatForm send {username: username, message: messageInput.value } about chatMessage to server 
 chatForm.addEventListener('submit', (e)=>{
   e.preventDefault();
-  socket.emit('chatMessage', {username: username, message: inputField.value });
-  inputField.value = "";
+  
+  socket.emit('chatMessage', {username: username, message: messageInput.value });
+  messageInput.value = "";
 })
